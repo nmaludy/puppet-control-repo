@@ -27,6 +27,21 @@ File { backup => false }
 
 node default {
   # This is where you can declare classes for all nodes.
-  # Example:
+  # Example
   #   class { 'my_class': }
+
+  include role::common
+    
+  # Suppresses the following warning -
+  #
+  # Warning: The package type's allow_virtual parameter will be changing
+  # its default value from false to true in a future release. If you do not want
+  # to allow virtual packages, please explicitly set allow_virtual to false.
+  # (at /usr/share/ruby/vendor_ruby/puppet/type.rb:816:in `set_default')
+  #
+  # @link https://ask.puppet.com/question/6640/warning-the-package-types-allow_virtual-parameter-will-be-changing-its-default-value-from-false-to-true-in-a-future-release/
+  # @link https://inuits.eu/blog/puppet-361-depreciation-warning
+  Package {
+    allow_virtual => true,
+  }
 }

@@ -1,5 +1,9 @@
 class profile::base {
+  file { 'motd':
+    path    => '/etc/motd',
+    content => "Tomorrow is another day ${::fqdn}\n",
+  }
 
-  #the base profile should include component modules that will be on all nodes
-
+  include ::profile::ntp
 }
+

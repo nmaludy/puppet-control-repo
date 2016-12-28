@@ -15,3 +15,20 @@ forge "http://forge.puppetlabs.com"
 #mod 'apache',
 #  :git    => 'https://github.com/puppetlabs/puppetlabs-apache',
 #  :branch => 'docs_experiment'
+
+
+################
+# Puppet Forge #
+################
+
+# NTP (version < 5.0.0 because we're on puppet 3.6)
+# https://forge.puppet.com/puppetlabs/ntp/changelog
+mod "puppetlabs/ntp", "4.2.0"
+
+# firewalld (version < 3.0.0 because we're on puppet 3.6)
+# https://forge.puppet.com/crayfishx/firewalld#firewalld-ports
+mod "crayfishx/firewalld", "2.2.0"
+
+################
+# Git          #
+################
