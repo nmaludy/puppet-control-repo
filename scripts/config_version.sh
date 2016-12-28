@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ruby_exe='ruby'
-if [ -e /opt/puppetlabs/puppet/bin/ruby]; then
+if [ -e /opt/puppetlabs/puppet/bin/ruby ]; then
   ruby_exe='/opt/puppetlabs/puppet/bin/ruby'
 fi
 
