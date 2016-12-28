@@ -4,7 +4,7 @@ class profile::base {
     content => "This server, ${::fqdn}, is managed by Puppet\n",
   }
 
-  include ::profile::ntp
-  include ::profile::snmp
+  include profile::ntp
+  include profile::snmp
 }
 

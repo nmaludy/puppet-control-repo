@@ -17,9 +17,9 @@ forge "http://forge.puppetlabs.com"
 #  :branch => 'docs_experiment'
 
 
-################
-# Puppet Forge #
-################
+##################
+# Puppet Modules #
+##################
 
 # NTP (version < 5.0.0 because we're on puppet 3.6)
 # https://forge.puppet.com/puppetlabs/ntp/changelog
@@ -32,7 +32,3 @@ mod "crayfishx/firewalld", "2.2.0"
 # SNMP
 # https://forge.puppet.com/razorsedge/snmp
 mod "razorsedge/snmp"
-
-################
-# Git          #
-################
