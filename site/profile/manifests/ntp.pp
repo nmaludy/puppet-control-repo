@@ -23,7 +23,11 @@ class profile::ntp {
   #  - enable and start the service
   #  - restrict access to local host (not a server)
   class { "::ntp":
-    servers => ["0.pool.ntp.org", "1.pool.ntp.org", "2.pool.ntp.org"]
+    servers => ["0.pool.ntp.org", "1.pool.ntp.org", "2.pool.ntp.org"],
+    # start at boot
+    service_enable => true,
+    # ensure running currently
+    service_ensure => true
   }
 }
 
