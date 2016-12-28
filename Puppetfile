@@ -29,6 +29,10 @@ mod "puppetlabs/ntp", "4.2.0"
 # https://forge.puppet.com/crayfishx/firewalld#firewalld-ports
 mod "crayfishx/firewalld", "2.2.0"
 
+# SNMP
+# https://forge.puppet.com/razorsedge/snmp
+mod "razorsedge/snmp"
+
 ################
 # Git          #
 ################

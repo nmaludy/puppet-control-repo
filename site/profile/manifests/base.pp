@@ -1,9 +1,10 @@
 class profile::base {
   file { 'motd':
     path    => '/etc/motd',
-    content => "Tomorrow is another day ${::fqdn}\n",
+    content => "This server, ${::fqdn}, is managed by Puppet\n",
   }
 
   include ::profile::ntp
+  include ::profile::snmp
 }
 
