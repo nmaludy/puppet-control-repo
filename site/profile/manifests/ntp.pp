@@ -27,7 +27,7 @@ class profile::ntp {
     # start at boot
     service_enable => true,
     # ensure running currently
-    service_ensure => true
+    service_ensure => 'running'
   }
 }
 
