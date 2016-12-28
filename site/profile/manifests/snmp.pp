@@ -19,7 +19,7 @@ class profile::snmp {
 
   # SNMP
   # https://forge.puppet.com/razorsedge/snmp
-  class { 'snmp':
+  class { '::snmp':
     # start at boot
     service_enable => true,
     # ensure running currently
