@@ -30,7 +30,10 @@ node default {
   # Example
   #   class { 'my_class': }
 
-  include role::base
+  # Assign the role from Hiera (cool trick)
+  # https://ask.puppet.com/question/10960/using-variables-in-a-hiera-hierachy/
+  $role = hiera("encore::role", "::role::base")
+  include $role
     
   # Suppresses the following warning -
   #
@@ -46,7 +49,9 @@ node default {
   }
 }
 
-# Allow assigning classes to nodes in Hiera
+# Allow assigning additional profiles (classes) to nodes in Hiera
 # https://docs.puppet.com/hiera/3.2/complete_example.html#using-hierainclude
-hiera_include('encore::profiles')
+# @note we don't want to allow this because we want these to be managed by
+#       a Role
+# hiera_include("encore::profiles", "")
 

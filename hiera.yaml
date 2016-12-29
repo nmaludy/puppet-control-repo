@@ -2,9 +2,13 @@
 :backends:
   - yaml
 
+# https://gist.github.com/benagricola/5494926
+# https://docs.puppet.com/hiera/3.2/puppet.html#special-pseudo-variables
 :hierarchy:
   - nodes/%{::clientcert}
-  #- puppet_role/%{puppet_role}
+  - role/%{calling_class}
+  - profile/%{calling_class}
+  - module/%{calling_module}
   - base
 
 :yaml:

@@ -1,6 +1,7 @@
 ---
-# Default profiles for a node
-encore::profiles: ""
+
+# Role for the node
+encore::role: "::role::base"
 
 # NTP
 encore::ntp::servers:
