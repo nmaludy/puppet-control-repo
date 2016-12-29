@@ -24,7 +24,12 @@ class profile::snmp {
     service_enable => true,
     # ensure running currently
     service_ensure => 'running',
-    # SNMP options
+    
+    # SNMP config options
+    # https://linux.die.net/man/5/snmpd.conf
+
+    # Listen on UDP port 161 (SNMP port) on all ipv4 and ipv6
+    agentaddress => [ 'udp:161', 'udp6:161' ],
     contact  => 'root@maludy.hom',
     location => 'Cincinnati, OH, USA, Earth, Milky Way',
     ro_community => 'myPassword',
