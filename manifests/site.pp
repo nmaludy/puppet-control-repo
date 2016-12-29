@@ -48,5 +48,5 @@ node default {
 
 # Allow assigning classes to nodes in Hiera
 # https://docs.puppet.com/hiera/3.2/complete_example.html#using-hierainclude
-hiera_include('classes')
+hiera_include('::encore::profiles')
 

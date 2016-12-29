@@ -5,7 +5,7 @@
 :hierarchy:
   - nodes/%{::clientcert}
   #- puppet_role/%{puppet_role}
-  - common
+  - base
 
 :yaml:
   :datadir: /etc/puppet/environments/%{environment}/hieradata

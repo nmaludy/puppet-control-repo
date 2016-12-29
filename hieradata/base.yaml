@@ -1,4 +1,7 @@
 ---
+# Default profiles for a node
+encore::profiles: ""
+
 # NTP
 encore::ntp::servers:
   - 0.pool.ntp.org
