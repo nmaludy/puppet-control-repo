@@ -33,7 +33,8 @@ node default {
   # Assign the role from Hiera (cool trick)
   # https://ask.puppet.com/question/10960/using-variables-in-a-hiera-hierachy/
   $role = hiera("encore::role", "::role::base")
-  include $role
+  $profiles = hiera("encore::profiles")
+  include $profiles
     
   # Suppresses the following warning -
   #
