@@ -6,7 +6,7 @@
 # https://docs.puppet.com/hiera/3.2/puppet.html#special-pseudo-variables
 :hierarchy:
   - nodes/%{::clientcert}
-  - role/%{calling_class}
+  - role/%{encore::role}
   - profile/%{calling_class}
   - module/%{calling_module}
   - base

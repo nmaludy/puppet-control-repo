@@ -1,7 +1,7 @@
 ---
 
 # Role for the node
-encore::role: "::role::base"
+encore::role: "role::base"
 
 # NTP
 encore::ntp::servers:
