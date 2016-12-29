@@ -30,7 +30,7 @@ node default {
   # Example
   #   class { 'my_class': }
 
-  include role::common
+  include role::base
     
   # Suppresses the following warning -
   #
@@ -45,3 +45,8 @@ node default {
     allow_virtual => true,
   }
 }
+
+# Allow assigning classes to nodes in Hiera
+# https://docs.puppet.com/hiera/3.2/complete_example.html#using-hierainclude
+hiera_include('classes')
+

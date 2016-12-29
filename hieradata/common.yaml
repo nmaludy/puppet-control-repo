@@ -1,2 +1,13 @@
 ---
-message: "This node is using common data"
+# NTP
+encore::ntp::servers:
+  - 0.pool.ntp.org
+  - 1.pool.ntp.org
+  - 2.pool.ntp.org
+
+# SNMP
+encore::snmp::contact: root@maludy.home
+encore::snmp::location: Cincinnati, OH, USA, Earth, Milky Way
+encore::snmp::ro_community: myPassword
+encore::snmp::ro_network: 192.168.0.0/16
+

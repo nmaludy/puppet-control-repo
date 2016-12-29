@@ -30,10 +30,10 @@ class profile::snmp {
 
     # Listen on UDP port 161 (SNMP port) on all ipv4 and ipv6
     agentaddress => [ 'udp:161', 'udp6:161' ],
-    contact  => 'root@maludy.hom',
-    location => 'Cincinnati, OH, USA, Earth, Milky Way',
-    ro_community => 'myPassword',
-    ro_network   => '192.168.0.0/16',
+    contact  => hiera("::encore::snmp::contact"),
+    location => hiera("::encore::snmp::location"),
+    ro_community => hiera("::encore::snmp::ro_community"),
+    ro_network   => hiera("::encore::snmp::ro_network"),
   }
 }
 
