@@ -28,6 +28,7 @@ class profile::snmp {
     contact  => 'root@maludy.hom',
     location => 'Cincinnati, OH, USA, Earth, Milky Way',
     ro_community => 'myPassword',
+    ro_network   => '192.168.0.0/16',
   }
 }
 
