@@ -28,7 +28,7 @@ class profile::ntp {
     # ensure running currently
     service_ensure => 'running',
     # NTP server
-    servers => hiera("::encore::ntp::servers"),
+    servers => hiera("encore::ntp::servers"),
   }
 }
 
