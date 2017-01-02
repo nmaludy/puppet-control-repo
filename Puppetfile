@@ -28,6 +28,13 @@ forge "http://forge.puppetlabs.com"
 # dependencies - none
 mod 'puppetlabs/stdlib'
 
+# motd
+# link - https://forge.puppet.com/puppetlabs/motd
+# dependencies -
+#  - puppetlabs/registry (>= 1.0.0 < 2.0.0)
+#  - puppetlabs/stdlib (>= 2.1.0 < 5.0.0)
+mod 'puppetlabs/motd'
+
 # NTP
 # link - https://forge.puppet.com/puppetlabs/ntp
 # dependencies - puppetlabs/stdlib (>= 4.13.1 <5.0.0)

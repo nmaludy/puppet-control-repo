@@ -1,18 +1,45 @@
 ---
+# Just use .yaml for now since it's much more readable than JSON
 :backends:
   - yaml
 
 # https://gist.github.com/benagricola/5494926
 # https://docs.puppet.com/hiera/3.2/puppet.html#special-pseudo-variables
+#
+# We've setup the hierachy from general to specific.
+#  base - the general configuration starting point for all nodes
+#
+#  module/${module_name} - configuration overrides for a specific module
+#
+#  profile/${profile_name} - configuration overrides for a given profile.
+#    The current use case for these is when you have a profile that is not
+#    incldue in the base role but still need a default value.
+#
+#  role/${role_name} - configuration overrides for a given role.
+#    These are useful for the case where we want to override a specific settings
+#    for a given role of servers. Example, all mysql servers should have a
+#    different NTP server.
+#
+#  node/${node_fqdn} - Assigning roles to nodes each node gets one and only one
+#     role. These files also contain configuration overrides for the specific
+#     node.
+#
+# @note: $encore_role variable is set in manifests/site.pp by reading in the
+#        encore::role setting in the hiera config for a given node.
+#        I (Nick) made the executive decision to use this encore_role variable
+#        because it's only defined in one place (site.pp) and it seems to be a
+#        scalable solution.
 :hierarchy:
-  - nodes/%{::clientcert}
-  - role/%{encore::role}
+  - node/%{::clientcert}
+  - role/%{encore_role}
   - profile/%{calling_class}
   - module/%{calling_module}
   - base
 
+# Where does the hierarchy live?
 :yaml:
   :datadir: /etc/puppet/environments/%{environment}/hieradata
 
-# options are native, deep, deeper
+# Options are native, deep, deeper
+# If using deep or deeper then we need to: gem install deep_merge
 :merge_behavior: deeper

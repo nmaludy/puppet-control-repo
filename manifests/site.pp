@@ -26,15 +26,7 @@ File { backup => false }
 # specified in the console for that node.
 
 node default {
-  # This is where you can declare classes for all nodes.
-  # Example
-  #   class { 'my_class': }
-
-  # Assign the role from Hiera (cool trick)
-  # https://ask.puppet.com/question/10960/using-variables-in-a-hiera-hierachy/
-  $role = hiera("encore::role", "::role::base")
-  $profiles = hiera("encore::profiles")
-  include $profiles
+  include ::role::base
     
   # Suppresses the following warning -
   #
@@ -50,9 +42,15 @@ node default {
   }
 }
 
-# Allow assigning additional profiles (classes) to nodes in Hiera
+# Assign the role from Hiera (cool trick)
+# https://ask.puppet.com/question/10960/using-variables-in-a-hiera-hierachy/
+$encore_role = hiera("encore::role", "role::base")
+notify {"Global Roles: ${encore_role}": withpath => true, }
+
+# Lookup the role from Heira and assign the 
 # https://docs.puppet.com/hiera/3.2/complete_example.html#using-hierainclude
 # @note we don't want to allow this because we want these to be managed by
 #       a Role
-# hiera_include("encore::profiles", "")
+hiera_include($encore_role, "")
+
 
