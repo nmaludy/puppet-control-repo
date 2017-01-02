@@ -15,3 +15,8 @@ encore::snmp::location: Cincinnati, OH, USA, Earth, Milky Way
 encore::snmp::ro_community: myPassword
 encore::snmp::ro_network: 192.168.0.0/16
 
+# MOTD (message of the day)
+#  Leave the content empty (aka undef, nil) so that the puppetlabs/motd
+#  module auto generates a motd.
+encore::motd::content:
+
