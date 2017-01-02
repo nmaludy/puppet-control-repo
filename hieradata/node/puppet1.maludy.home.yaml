@@ -1,6 +1,6 @@
 ---
 # SNMP
-encore::snmp::contact: abc123@maludy.home
+encore::snmp::contact: abc1234@maludy.home
 
 # MOTD
-encore::motd:content: "This server, ${::fqdn}, is managed by Puppet"
+encore::motd::content: "This server, %{::fqdn}, is managed by Puppet"
