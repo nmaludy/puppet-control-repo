@@ -45,6 +45,7 @@ node default {
 # Assign the role from Hiera (cool trick)
 # https://ask.puppet.com/question/10960/using-variables-in-a-hiera-hierachy/
 $encore_role = hiera("encore::role", "role::base")
+# debug to console when running puppet agent
 notify {"${::fqdn} - encore::role = ${encore_role}": withpath => true, }
 
 # Lookup the role from Heira and assign the 
