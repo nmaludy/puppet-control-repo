@@ -1,9 +1,9 @@
 class role::mcollective {
-  include profile::motd
-  include profile::ntp
-  include profile::snmp
+  contain profile::motd
+  contain profile::ntp
+  contain profile::snmp
 
-  include profile::mcollective::repo
-  include profile::mcollective::middleware
-  include profile::mcollective::client
+  contain profile::mcollective::repo
+  contain profile::mcollective::middleware
+  contain profile::mcollective::client
 }
