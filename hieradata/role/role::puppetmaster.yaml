@@ -1,4 +1,6 @@
 ---
+encore::role: "role::puppetmaster"
+
 # Overrides for the puppetmaster role
 encore::ntp::servers:
   - 0.centos.pool.ntp.org
