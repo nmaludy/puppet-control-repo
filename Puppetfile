@@ -26,14 +26,15 @@ forge "http://forge.puppetlabs.com"
 # stdlib
 # link - https://forge.puppet.com/puppetlabs/stdlib
 # dependencies - none
-mod 'puppetlabs/stdlib'
+mod "puppetlabs/stdlib"
 
 # motd
 # link - https://forge.puppet.com/puppetlabs/motd
 # dependencies -
 #  - puppetlabs/registry (>= 1.0.0 < 2.0.0)
 #  - puppetlabs/stdlib (>= 2.1.0 < 5.0.0)
-mod 'puppetlabs/motd'
+mod "puppetlabs/registry"
+mod "puppetlabs/motd"
 
 # NTP
 # link - https://forge.puppet.com/puppetlabs/ntp
@@ -58,4 +59,5 @@ mod "razorsedge/snmp"
 #  - richardc/datacat (>= 0.6.2 < 1.0.0)
 #  - puppetlabs/stdlib (>=4.6.0 < 5.0.0)
 # version - < 2.1.3 because we're on puppet 3.6
+mod "richardc/datacat"
 mod "puppet/mcollective", "2.1.1"
