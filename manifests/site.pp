@@ -52,6 +52,7 @@ notify {"${::fqdn} - encore::role = ${encore_role}": withpath => true, }
 # https://docs.puppet.com/hiera/3.2/complete_example.html#using-hierainclude
 # @note we don't want to allow this because we want these to be managed by
 #       a Role
-hiera_include($encore_role, "")
+#hiera_include($encore_role, "")
+include $encore_role
 
 
