@@ -6,5 +6,4 @@ class role::mcollective {
   contain profile::mcollective::repo
   contain profile::mcollective::middleware
   contain profile::mcollective::client
-  contain activemq
 }
