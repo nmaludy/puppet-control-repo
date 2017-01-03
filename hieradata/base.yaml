@@ -20,3 +20,7 @@ encore::snmp::ro_network: 192.168.0.0/16
 #  module auto generates a motd.
 encore::motd::content:
 
+
+# MCollective
+encore::mcollective::middleware_hosts:
+  - puppetmco.maludy.home

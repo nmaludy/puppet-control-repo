@@ -4,3 +4,4 @@ encore::snmp::contact: abc1234@maludy.home
 
 # MOTD
 encore::motd::content: "This server, %{::fqdn}, is managed by Puppet"
+
