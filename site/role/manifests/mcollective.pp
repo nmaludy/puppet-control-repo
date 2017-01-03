@@ -3,6 +3,7 @@ class role::mcollective {
   include profile::ntp
   include profile::snmp
 
+  include profile::mcollective::repo
   include profile::mcollective::middleware
   include profile::mcollective::client
 }
