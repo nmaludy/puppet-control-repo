@@ -1,4 +1,6 @@
 class role::base {
+  notify {"${::fqdn} - Running in role::base": withpath => true, }
+  
   include profile::motd
   include profile::ntp
   include profile::snmp
