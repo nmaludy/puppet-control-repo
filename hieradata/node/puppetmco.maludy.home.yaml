@@ -1,2 +1,3 @@
 ---
-encore::role: "role::mcollective"
+encore::role: "role::base"
+
