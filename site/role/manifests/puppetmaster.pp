@@ -1,3 +1,3 @@
-class role::base inherits profile::base {
+class role::puppetmaster inherits role::base {
 }
 
