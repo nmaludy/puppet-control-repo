@@ -1,13 +1,10 @@
 class role::mcollective {
   notify {"${::fqdn} - Running in role::mcollective": withpath => true, }
   
-  contain profile::motd
-  contain profile::ntp
-  contain profile::snmp
+  include profile::motd
+  include profile::ntp
+  include profile::snmp
 
-  contain profile::mcollective::repo
-  contain profile::mcollective::middleware
-  contain profile::mcollective::client
-
-  contain ::fdsfds
+  include profile::mcollective::middleware
+  include profile::mcollective::client
 }

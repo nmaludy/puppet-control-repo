@@ -53,6 +53,14 @@ mod "crayfishx/firewalld", "2.2.0"
 # dependencies - puppetlabs/stdlib (>=2.3.0 <5.0.0)
 mod "razorsedge/snmp"
 
+# ActiveMQ (dependency of MCollective)
+# link - https://forge.puppet.com/puppetlabs/activemq
+# dependencies -
+#  - puppetlabs/stdlib (>= 0.1.6)
+#  - puppetlabs/java (>= 0.1.0)
+mod 'puppetlabs/java'
+mod 'puppetlabs/activemq'
+
 # MCollective
 # link - https://forge.puppet.com/puppet/mcollective/
 # dependencies -
