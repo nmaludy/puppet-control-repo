@@ -1,5 +1,8 @@
 class profile::ntp {
 
+  # Hiera
+  $hiera_ntp_serers = hiera("encore::ntp::servers")
+  
   include ::stdlib
   # firewalld declares a bunch of resources
   include ::firewalld
@@ -28,7 +31,7 @@ class profile::ntp {
     # ensure running currently
     service_ensure => 'running',
     # NTP server
-    servers => hiera("encore::ntp::servers"),
+    servers => "${hiera_ntp_serers}",
   }
 }
 

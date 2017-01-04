@@ -30,7 +30,9 @@ Package {
 
 ## Nodes ##
 
-node default {
+# definition that matches all nodes if not matched elsewhere in this file
+# @link https://docs.puppet.com/puppet/latest/lang_node_definitions.html#the-default-node
+node default {  
   # Assign the role from Hiera (cool trick)
   # https://ask.puppet.com/question/10960/using-variables-in-a-hiera-hierachy/
   #
