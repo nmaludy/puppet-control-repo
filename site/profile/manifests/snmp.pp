@@ -1,5 +1,12 @@
 class profile::snmp {
 
+  # Hiera
+  $snmp_contact      = hiera("encore::snmp::contact")
+  $snmp_location     = hiera("encore::snmp::location")
+  $snmp_ro_community = hiera("encore::snmp::ro_community")
+  $snmp_ro_network   = hiera("encore::snmp::ro_network")
+
+  # Includes
   include ::stdlib
   # firewalld declares a bunch of resources
   include ::firewalld
@@ -30,10 +37,10 @@ class profile::snmp {
 
     # Listen on UDP port 161 (SNMP port) on all ipv4 and ipv6
     agentaddress => [ 'udp:161', 'udp6:161' ],
-    contact  => hiera("encore::snmp::contact"),
-    location => hiera("encore::snmp::location"),
-    ro_community => hiera("encore::snmp::ro_community"),
-    ro_network   => hiera("encore::snmp::ro_network"),
+    contact      => $snmp_contact,
+    location     => $snmp_location,
+    ro_community => $snmp_ro_community,
+    ro_network   => $snmp_ro_network,
   }
 }
 
