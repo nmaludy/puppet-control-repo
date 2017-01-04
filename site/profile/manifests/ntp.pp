@@ -30,8 +30,8 @@ class profile::ntp {
     service_enable => true,
     # ensure running currently
     service_ensure => 'running',
-    # NTP server
-    servers => "${hiera_ntp_serers}",
+    # NTP servers (array)
+    servers => $hiera_ntp_serers,
   }
 }
 
