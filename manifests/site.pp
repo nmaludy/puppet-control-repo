@@ -25,22 +25,22 @@ File { backup => false }
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-node default {
-  include ::role::base
+# node default {
+#   include ::role::base
     
-  # Suppresses the following warning -
-  #
-  # Warning: The package type's allow_virtual parameter will be changing
-  # its default value from false to true in a future release. If you do not want
-  # to allow virtual packages, please explicitly set allow_virtual to false.
-  # (at /usr/share/ruby/vendor_ruby/puppet/type.rb:816:in `set_default')
-  #
-  # @link https://ask.puppet.com/question/6640/warning-the-package-types-allow_virtual-parameter-will-be-changing-its-default-value-from-false-to-true-in-a-future-release/
-  # @link https://inuits.eu/blog/puppet-361-depreciation-warning
-  Package {
-    allow_virtual => true,
-  }
-}
+#   # Suppresses the following warning -
+#   #
+#   # Warning: The package type's allow_virtual parameter will be changing
+#   # its default value from false to true in a future release. If you do not want
+#   # to allow virtual packages, please explicitly set allow_virtual to false.
+#   # (at /usr/share/ruby/vendor_ruby/puppet/type.rb:816:in `set_default')
+#   #
+#   # @link https://ask.puppet.com/question/6640/warning-the-package-types-allow_virtual-parameter-will-be-changing-its-default-value-from-false-to-true-in-a-future-release/
+#   # @link https://inuits.eu/blog/puppet-361-depreciation-warning
+#   Package {
+#     allow_virtual => true,
+#   }
+# }
 
 # Assign the role from Hiera (cool trick)
 # https://ask.puppet.com/question/10960/using-variables-in-a-hiera-hierachy/
@@ -55,4 +55,15 @@ notify {"${::fqdn} - encore::role = ${encore_role}": withpath => true, }
 #hiera_include($encore_role, "")
 include $encore_role
 
-
+# Suppresses the following warning -
+#
+# Warning: The package type's allow_virtual parameter will be changing
+# its default value from false to true in a future release. If you do not want
+# to allow virtual packages, please explicitly set allow_virtual to false.
+# (at /usr/share/ruby/vendor_ruby/puppet/type.rb:816:in `set_default')
+#
+# @link https://ask.puppet.com/question/6640/warning-the-package-types-allow_virtual-parameter-will-be-changing-its-default-value-from-false-to-true-in-a-future-release/
+# @link https://inuits.eu/blog/puppet-361-depreciation-warning
+Package {
+  allow_virtual => true,
+}
