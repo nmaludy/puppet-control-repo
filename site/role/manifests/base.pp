@@ -7,6 +7,6 @@ class role::base {
   # @note The term "server" in mcollective means that this is a node
   #       that receives mcollective requests and performs actions
   # @link https://docs.puppet.com/mcollective/overview_components.html
-  include profile::mcollective::server
+  #include profile::mcollective::server
 }
 
