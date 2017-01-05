@@ -13,8 +13,14 @@ class profile::mcollective::middleware {
   #  ln -s /var/cache/activemq/data /usr/share/activemq/activemq-data
 
   # preferred symlink syntax
-  file { "//usr/share/activemq/activemq-data":
+  file { "/usr/share/activemq/activemq-data":
     ensure => "link",
     target => "/var/cache/activemq/data",
+  }
+
+  service { "activemq" :
+    name   => "activemq",
+    enable => true,
+    ensure => "running",
   }
 }
