@@ -41,5 +41,5 @@
   :datadir: /etc/puppet/environments/%{environment}/hieradata
 
 # Options are native, deep, deeper
-# If using deep or deeper then we need to: gem install deep_merge
-:merge_behavior: deeper
+#   If using deep or deeper then we need to: gem install deep_merge
+:merge_behavior: native

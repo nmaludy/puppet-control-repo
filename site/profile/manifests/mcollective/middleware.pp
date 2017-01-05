@@ -18,6 +18,10 @@ class profile::mcollective::middleware {
     target => "/var/cache/activemq/data",
   }
 
+  # Because the activemq module doesn't expose an "enabled"
+  # value, and they don't enable the service by default, we have
+  # to extend their Service definition and add the enabled
+  # setting.
   class amq::service inherits ::activemq::service {    
     Service["activemq"] {
       enable => true,
