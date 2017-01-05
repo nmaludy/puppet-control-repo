@@ -18,7 +18,10 @@ class profile::mcollective::middleware {
     target => "/var/cache/activemq/data",
   }
 
-  Service["activemq"] {
-    enable => true,
+  class amq::service inherits ::activemq::service {    
+    Service["activemq"] {
+      enable => true,
+    }
   }
+  include amq::service
 }
