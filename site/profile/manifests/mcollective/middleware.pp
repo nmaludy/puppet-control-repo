@@ -28,4 +28,22 @@ class profile::mcollective::middleware {
     }
   }
   include amq::service
+
+  # Firewall
+  if $::osfamily == "RedHat" and $::operatingsystemmajrelease >= "7" {
+    include ::firewalld
+    
+    firewalld_service { "activemq-stomp":
+      ensure   => present,
+      zone     => 'public',
+      port     => 61613,
+      protocol => 'tcp',
+    }
+    firewalld_service { "activemq-stomp-secure":
+      ensure   => present,
+      zone     => 'public',
+      port     => 61614,
+      protocol => 'tcp',
+    }
+  }
 }
