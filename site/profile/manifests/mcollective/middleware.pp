@@ -36,13 +36,13 @@ class profile::mcollective::middleware {
     firewalld_service { "activemq-stomp":
       ensure   => present,
       zone     => 'public',
-      port     => 61613,
+      port     => '61613',
       protocol => 'tcp',
     }
     firewalld_service { "activemq-stomp-secure":
       ensure   => present,
       zone     => 'public',
-      port     => 61614,
+      port     => '61614',
       protocol => 'tcp',
     }
   }
