@@ -33,16 +33,16 @@ class profile::mcollective::middleware {
   if $::osfamily == "RedHat" and $::operatingsystemmajrelease >= "7" {
     include ::firewalld
     
-    firewalld_service { "activemq-stomp":
+    firewalld_port { "activemq-stomp":
       ensure   => present,
       zone     => 'public',
-      port     => '61613',
+      port     => 61613,
       protocol => 'tcp',
     }
-    firewalld_service { "activemq-stomp-secure":
+    firewalld_port { "activemq-stomp-secure":
       ensure   => present,
       zone     => 'public',
-      port     => '61614',
+      port     => 61614,
       protocol => 'tcp',
     }
   }
