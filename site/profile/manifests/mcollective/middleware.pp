@@ -18,9 +18,7 @@ class profile::mcollective::middleware {
     target => "/var/cache/activemq/data",
   }
 
-  service { "service-activemq" :
-    name   => "activemq",
+  Service["activemq"] {
     enable => true,
-    ensure => "running",
   }
 }
