@@ -6,7 +6,7 @@ class profile::virt_who {
   # lookup data from hiera
   $hiera_virt_who_vcenter  = hiera('encore::virt_who::vcenter')
   $hiera_virt_who_username = hiera('encore::virt_who::username')
-  $hiera_virt_who_username = hiera('encore::virt_who::password')
+  $hiera_virt_who_password = hiera('encore::virt_who::password')
 
   package { 'virt-who':
     ensure => installed,
