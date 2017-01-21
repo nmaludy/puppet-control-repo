@@ -20,6 +20,8 @@ class profile::virt_who {
     mode      => '0644',
     group     => 'root',
     # Note: the hiera_virt_who_* variables are passed to this template
+    # template lives in modules/<module_name>/templates/<filename>.erb
+    # example: modules/virtual-who/templates/virtual-who.conf.erb
     content   => template('virt-who/virt-who.conf.erb'),
     subscribe => Package['virt-who'],
     notify    => Service['virt-who'],
