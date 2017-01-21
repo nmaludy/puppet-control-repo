@@ -21,6 +21,11 @@ encore::snmp::ro_network: 172.16.0.0/16
 #  module auto generates a motd.
 encore::motd::content:
 
+# virt-who
+encore::virt_who::vcenter: vcs1.encore.dev
+encore::virt_who::username: svc_virt_who@vcs1.vmw
+encore::virt_who::password: ReadOnlyAcce$$459
+  
 # MCollective
 encore::mcollective::middleware_hosts:
   - puppetmco.maludy.home

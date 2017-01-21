@@ -1,0 +1,10 @@
+# /etc/virt-who.d/vcenter.conf : Managed by puppet.
+[<%= @hiera_virt_who_vcenter %>]
+type=esx
+server=<%= @hiera_virt_who_vcenter %>
+username=<%= @hiera_virt_who_username %>
+password=<%= @hiera_virt_who_password %>
+#encryped_password=
+owner=1
+env=Library
+hypervisor_id=hostname
