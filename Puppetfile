@@ -42,6 +42,10 @@ mod "puppetlabs/motd"
 # version - < 5.0.0 because we're on puppet 3.6
 mod "puppetlabs/ntp", "4.2.0"
 
+# firewall (iptables)
+# link - https://forge.puppet.com/puppetlabs/firewall
+mod "puppetlabs/firewall"
+
 # firewalld
 # link - https://forge.puppet.com/crayfishx/firewalld
 # dependencies - puppetlabs/stdlib (>=4.2.0 <5.0.0)

@@ -1,3 +1,4 @@
+# Profile that configures the mcollective middleware activemq
 class profile::mcollective::middleware {
   include ::activemq
 
@@ -13,33 +14,33 @@ class profile::mcollective::middleware {
   #  ln -s /var/cache/activemq/data /usr/share/activemq/activemq-data
 
   # preferred symlink syntax
-  file { "/usr/share/activemq/activemq-data":
-    ensure => "link",
-    target => "/var/cache/activemq/data",
+  file { '/usr/share/activemq/activemq-data':
+    ensure => 'link',
+    target => '/var/cache/activemq/data',
   }
 
-  # Because the activemq module doesn't expose an "enabled"
+  # Because the activemq module doesn't expose an 'enabled'
   # value, and they don't enable the service by default, we have
   # to extend their Service definition and add the enabled
   # setting.
-  class amq::service inherits ::activemq::service {    
-    Service["activemq"] {
+  class amq::service inherits ::activemq::service {
+    Service['activemq'] {
       enable => true,
     }
   }
   include amq::service
 
   # Firewall
-  if $::osfamily == "RedHat" and $::operatingsystemmajrelease >= "7" {
+  if $::osfamily == 'RedHat' and $::operatingsystemmajrelease >= '7' {
     include ::firewalld
-    
-    firewalld_port { "activemq-stomp":
+
+    firewalld_port { 'activemq-stomp':
       ensure   => present,
       zone     => 'public',
       port     => 61613,
       protocol => 'tcp',
     }
-    firewalld_port { "activemq-stomp-secure":
+    firewalld_port { 'activemq-stomp-secure':
       ensure   => present,
       zone     => 'public',
       port     => 61614,

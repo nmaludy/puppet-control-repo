@@ -11,16 +11,15 @@ encore::ntp::servers:
   - 3.pool.ntp.org
 
 # SNMP
-encore::snmp::contact: root@maludy.home
-encore::snmp::location: Cincinnati, OH, USA, Earth, Milky Way
+encore::snmp::contact: snmp@encore.tech
+encore::snmp::location: Cincinnati, OH, USA
 encore::snmp::ro_community: myPassword
-encore::snmp::ro_network: 192.168.0.0/16
+encore::snmp::ro_network: 172.16.0.0/16
 
 # MOTD (message of the day)
 #  Leave the content empty (aka undef, nil) so that the puppetlabs/motd
 #  module auto generates a motd.
 encore::motd::content:
-
 
 # MCollective
 encore::mcollective::middleware_hosts:
