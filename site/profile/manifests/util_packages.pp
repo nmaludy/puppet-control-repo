@@ -10,7 +10,7 @@ class profile::util_packages {
     name   => 'bind-utils',
   }
 
-  if $::selinux == 'true' {
+  if str2bool($::selinux) == true {
     package { 'checkpolicy':
       ensure => installed,
       name   => 'checkpolicy',
@@ -47,7 +47,7 @@ class profile::util_packages {
     name   => 'perl',
   }
 
-  if $::selinux == 'true' {
+  if str2bool($::selinux) == true {
     package { 'policycoreutils':
       ensure => installed,
       name   => 'policycoreutils',

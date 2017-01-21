@@ -32,13 +32,13 @@ Package {
 
 # definition that matches all nodes if not matched elsewhere in this file
 # @link https://docs.puppet.com/puppet/latest/lang_node_definitions.html#the-default-node
-node default {  
+node default {
   # Assign the role from Hiera (cool trick)
   # https://ask.puppet.com/question/10960/using-variables-in-a-hiera-hierachy/
   #
   # @note the "default" node definition is contained in hieradata/base.yaml
   #       and will utilize the role role::base
-  $encore_role = hiera("encore::role", "role::base")
+  $encore_role = hiera('encore::role', 'role::base')
 
   # debug to console when running puppet agent
   notify {"${::fqdn} - encore::role = ${encore_role}": withpath => true, }
