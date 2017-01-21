@@ -25,7 +25,8 @@ class profile::ntp {
       # firewall iptables
       # check on host -
       # iptables | grep 123
-      firewall { 'Allow NTP port 123 UDP':
+      # note: all rules smust be prefixed by a number (standardizing on port number)
+      firewall { '123 Allow NTP port 123 UDP':
         dport  => 123,
         proto  => udp,
         action => accept,

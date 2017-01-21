@@ -30,12 +30,14 @@ class profile::snmp {
       # firewall iptables
       # check on host -
       # iptables | grep 161
-      firewall { 'Allow SNMP port 161 TCP':
+      # note: all rules smust be prefixed by a number (standardizing on port number)
+      firewall { '161 Allow SNMP port 161 TCP':
         dport  => 161,
         proto  => tcp,
         action => accept,
       }
-      firewall { 'Allow SNMP port 161 UDP':
+      # note: all rules smust be prefixed by a number (standardizing on port number)
+      firewall { '161 Allow SNMP port 161 UDP':
         dport  => 161,
         proto  => udp,
         action => accept,
